@@ -52,8 +52,7 @@ class UserMoney:  # класс получающий входные данные
             raise UserException(f"ОЙ! А что это за валюта такая {base}? Давай попробуем ещё раз!")
         if quote not in tikets:
             raise UserException(f"ОЙ! А что это за валюта такая {quote}? Давай попробуем ещё раз!")
-        if amount == float(amount):
-            raise UserException(f"Не знаю вкурсе ты или нет, но '{amount}' - это вообще не число!")
+
 
     @staticmethod
     def convert(value, amount, quote, base, tikets):    # метод конвертации

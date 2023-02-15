@@ -41,10 +41,12 @@ def zadanie(message: telebot.types.Message):
         text = UserMoney.convert(value, amount, quote, base, tikets)
     except UserException as e:
         text = f"Ошибочка! \n {e}"
+    except ValueError:
+        text = f"Не знаю вкурсе ты или нет, но '{amount}' - это вообще не число!"
     except Exception as e:
         text = f"Неверное количество параметров (должно быть 3 параметра!) \n" \
               f"Почитай пожалуйста инструкцию\n" \
-              f"* я надеюсь ты знаешь, что вызвать инструкцию можно командой /help \n {e}"
+              f"* я надеюсь ты знаешь, что вызвать инструкцию можно командой /help \n"
 
     bot.reply_to(message, text)
 
